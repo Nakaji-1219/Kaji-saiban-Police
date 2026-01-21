@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家事法廷：逆転ルール</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Noto+Serif+JP:wght@700;900&display=swap');
+        
+        body { 
+          font-family: 'Kiwi Maru', serif; 
+          background: #1a1a2e; /* 深みのある紺色 */
+        }
+
+        .font-court { font-family: 'Noto Serif JP', serif; }
+
+        /* 逆転裁判風のアニメーション */
+        @keyframes igiari {
+          0% { transform: scale(0.5); opacity: 0; }
+          70% { transform: scale(1.2); opacity: 1; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+
+        .igiari-text {
+          animation: igiari 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+          color: #ff4b2b;
+          text-shadow: 4px 4px 0px #fff, -2px -2px 0px #fff, 2px -2px 0px #fff, -2px 2px 0px #fff;
+          font-weight: 900;
+        }
+
+        @keyframes screen-shake {
+          0% { transform: translate(0,0); }
+          25% { transform: translate(5px,5px); }
+          50% { transform: translate(-5px,-5px); }
+          75% { transform: translate(5px,-5px); }
+          100% { transform: translate(0,0); }
+        }
+
+        .shake { animation: screen-shake 0.2s ease-in-out; }
+
+        /* 木目調のテクスチャ */
+        .wood-panel {
+          background-color: #5d4037;
+          background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+          border-bottom: 8px solid #3e2723;
+        }
+
+        /* ゲージのデザイン */
+        .gauge-container {
+          background: #222;
+          border: 2px solid #ffd700;
+          box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "path": "https://esm.sh/path@^0.12.7",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="text-slate-100">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
